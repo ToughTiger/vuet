@@ -1,15 +1,29 @@
+
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+<h1>Ninja Reaction Timer</h1>
+<NinjaTimerBlock />
+<ReactionTimerResult/>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import NinjaTimerBlock from './components/ReactionTimerBlock.vue'
+import ReactionTimerResult from './components/ReactionTimerResult.vue'
 export default {
   name: 'App',
   components: {
-    HelloWorld
+       NinjaTimerBlock,
+       ReactionTimerResult
+    },
+  data() {
+    return {
+      title: "My First Vue App :)"
+    }
+  },
+  methods: {
+    handleInput() {
+      console.log(this.$refs.name)
+      this.$refs.name.classList.add('active')
+    }
   }
 }
 </script>
